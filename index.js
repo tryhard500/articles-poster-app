@@ -53,7 +53,6 @@ app.get('/events/search', async function (req, res) {
 
 app.post('/events/register', async function (req, res) {
     let id = req.body.id;
-    console.log(id);
     let event = await Event.findOne({_id: id});
     if (event.ticketsCount > 0) {
         event.ticketsCount--;

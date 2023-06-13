@@ -86,12 +86,11 @@ export default {
 
         async register(item) {
             console.log(item._id);
-            let response = await axios.post('/events/register', {
-                params: {
-                    id: item._id
-                }
+            let response = await axios.post('/events/register',{
+                id: item._id
             });
-            this.event = response.data
+            this.event = response.data;
+            this.loadAll();
         }
     },
     mounted() {
